@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<body>
+<style>
+body{
+    background-color: #f5f5f5;
+    color: white;
+    padding-left: 200px;
+}
+.container{
+  text-align: center;
+  padding-top: 5rem;
+}
+.container1{
+    text-align: center;
+    padding-left: 510px;
+}
+.title{
+    padding-left: 550px;
+}
+.pred{
+    padding-left: 550px;
+}
+</style>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
+</head>
+<body><br><br><br>
+<div class="title">
+     <h1 id="title">Adult Income Prediction</h1>
+    </div>
+     <form action="{{ url_for('pred')}}" method="post">
+        <div class="container">
+          <div class="row">
+            <div class="col-5">
+              Select Gender :
+                <select name='gender' class="form-control" id="gender">
+                <option value="Male" , id="gender">Male</option>
+                <option value="Female" , id="gender">Female</option>
+              </select><br>       
+          </div>
+            <div class="col-5">
+              Select Education :
+              <select name='education' class="form-control" id="education">
+                <option value="Some-college" , id="education">Some College</option>     
+                <option value="11th" , id="education">11th</option>
+                <option value="12th" , id="education">12th</option>
+                <option value="10th" , id="education">10th</option>
+                <option value="7th-8th" , id="education">7th-8th</option>
+                <option value="5th-6th" , id="education">5th-6th</option>
+                <option value="9th" , id="education">'9th'</option>
+                <option value="HS-grad" , id="education">HS grad</option>
+                <option value="Assoc-acdm" , id="education">Assoc-acdm</option>
+                <option value="CommunityCollege" , id="education">CommunityCollege</option>
+                <option value="Assoc-voc" , id="education">Assoc-voc</option>
+                <option value="Prof-school" , id="education">Prof-school</option>
+                <option value="1st-4th" , id="education">1st-4th</option>
+                <option value="Masters" , id="education">Masters</option>
+                <option value="Bachelors" , id="education">Bachelors</option>
+                <option value="Doctorate" , id="education">Doctorate</option>
+              </select><br>          
+          </div>
+          </div>
+          <div class="row">
+            <div class="col-5">
+              Select Workclass :
+              <select name='workclass' class="form-control" id="workclass">
+                <option value="Private" , id ='workclass'>Private</option>
+                <option value="Local-gov" , id="workclass">Local-gov</option>
+                <option value="Federal-gov" , id="workclass">Federal-gov</option>
+                <option value="State-gov" , id="workclass">State-gov</option>
+                <option value="Self-emp-not-inc" , id="workclass">Self-emp-not-inc</option>
+                <option value="Self-emp-inc" , id="workclass">Self-emp-inc</option>
+                <option value="Without-pay" , id="workclass">Without pay</option>
+                <option value="Never-worked" , id="workclass">Never worked</option>
+              </select><br>
+            </div>
+            <div class="col-5">
+              Select Marital Status :
+              <select name='marital_status' class="form-control" id="marital_status">
+                <option value="Married" , id="marital_status">Married</option>
+                <option value="Single" , id="marital_status">Single</option>
+                <option value="Separated" , id="marital_status">Separated</option>
+                <option value="Widowed" , id="marital_status">Widowed</option>
+              </select><br>          
+          </div></div>
+          <div class="row">
+            <div class="col-md-5">
+              Select Occupation :
+              <select name='occupation' class="form-control" id="occupation">
+                <option value="Tech-support" , id="occupation">Tech-support</option>
+                <option value="Craft-repair" , id="occupation">Craft-repair</option>
+                <option value="Other-service" , id="occupation">Other-service</option>
+                <option value="Sales" , id="occupation">Sales</option>
+                <option value="Exec-managerial" , id="occupation">Exec-managerial</option>
+                <option value="Prof-specialty" , id="occupation">Prof-specialty</option>
+                <option value="Handlers-cleaners" , id="occupation">Handlers-cleaners</option>
+                <option value="Machine-op-inspct" , id="occupation">Machine-op-inspct</option>
+                <option value="Adm-clerical" , id="occupation">Adm-clerical</option>
+                <option value="Farming-fishing" , id="occupation">Farming-fishing</option>
+                <option value="Transport-moving" , id="occupation">Transport-moving</option>
+                <option value="Priv-house-serv" , id="occupation">Priv-house-serv</option>
+                <option value="Protective-serv" , id="occupation">Protective-serv</option>
+                <option value="Armed-Forces" , id="occupation">Armed-Forces</option>
+              </select><br>
+            </div>
+          
+            <div class="col-md-5">
+            Select Relationship :
+              <select name='relationship' class="form-control" id="relationship">
+                <option value="Wife" , id="relationship">Wife</option>
+                <option value="Own-child" , id="relationship">Own-child</option>
+                <option value="Husband" , id="relationship">Husband</option>
+                <option value="Not-in-family" , id="relationship">Not-in-family</option>
+                <option value="Other-relative" , id="relationship">Other-relative</option>
+                <option value="Unmarried" , id="relationship">Unmarried</option>
+              </select><br>
+            </div>
+            
+            <div class="col-md-5">
+              Select Race : 
+              <select name = "race" class = "form-control", id ='race'>
+                <option value="White", id = 'race'>White</option>
+                <option value="Black", id='race'>Black</option>
+                <option value = 'Asian-Pac-Islander', id = 'race'>Asian-Pac-Islander</option>
+                <option value = 'Amer-Indian-Eskimo', id = 'race'>Amer-Indian-Eskimo</option>
+                <option value = 'Other', id = 'race'>Other</option>
+              </select><br>
+            </div>
+            <div class="col-md-5">
+              Native Country : 
+
+              <select name = "native_country" class = "form-control", id ='native_country'>
+                <option value="United-States", id = 'native_country'>United-States</option>
+                <option value="Cambodia", id = 'native_country'>Cambodia</option>
+                <option value="England", id = 'native_country'>England</option>
+                <option value="Puerto-Rico", id = 'native_country'>Puerto-Rico</option>
+                <option value="Canada", id = 'native_country'>Canada</option>
+                <option value="Germany", id = 'native_country'>Germany</option>
+                <option value="Outlying-US(Guam-USVI-etc)", id = 'native_country'>Outlying-US(Guam-USVI-etc)</option>
+                <option value="India", id = 'native_country'>India</option>
+                <option value="Japan", id = 'native_country'>Japan</option>
+                <option value="Greece", id = 'native_country'>Greece</option>
+                <option value="South", id = 'native_country'>South</option>
+                <option value="China", id = 'native_country'>China</option>
+                <option value="Cuba", id = 'native_country'>Cuba</option>
+                <option value="Iran", id = 'native_country'>Iran</option>
+                <option value="Honduras", id = 'native_country'>Honduras</option>
+                <option value="Philippines", id = 'native_country'>Philippines</option>
+                <option value="Italy", id = 'native_country'>Italy</option>
+                <option value="Poland", id = 'native_country'>Poland</option>
+                <option value="Jamaica", id = 'native_country'>Jamaica</option>
+                <option value="Vietnam", id = 'native_country'>Vietnam</option>
+                <option value="Mexico", id = 'native_country'>Mexico</option>
+                <option value="Portugal", id = 'native_country'>Portugal</option>
+                <option value="Ireland", id = 'native_country'>Ireland</option>
+                <option value="France", id = 'native_country'>France</option>
+                <option value="Dominican-Republic", id = 'native_country'>Dominican-Republic</option>
+                <option value="Laos", id = 'native_country'>Laos</option>
+                <option value="Ecuador", id = 'native_country'>Ecuador</option>
+                <option value="Taiwan", id = 'native_country'>Taiwan</option>
+                <option value="Haiti", id = 'native_country'>Haiti</option>
+                <option value="Columbia", id = 'native_country'>Columbia</option>
+                <option value="Hungary", id = 'native_country'>Hungary</option>
+                <option value="Guatemala", id = 'native_country'>Guatemala</option>
+                <option value="Nicaragua", id = 'native_country'>Nicaragua</option>
+                <option value="Scotland", id = 'native_country'>Scotland</option>
+                <option value="Thailand", id = 'native_country'>Thailand</option>
+                <option value="Yugoslavia", id = 'native_country'>Yugoslavia</option>
+                <option value="El-Salvador", id = 'native_country'>El-Salvador</option>
+                <option value="Trinadad&Tobago", id = 'native_country'>Trinadad&Tobago</option>
+                <option value="Peru", id = 'native_country'>Peru</option>
+                <option value="Hong", id = 'native_country'>Hong</option>
+                <option value="Holand-Netherlands", id = 'native_country'>Holand-Netherlands</option>
+              </select><br>
+            </div>
+            
+            <div class="col-md-5">
+              Age Group : 
+              <select name = "age_group" class = "form-control", id ='age_group'>
+                <option value="Youth", id = 'age_group'>Youth</option>
+                <option value="Senior", id='age_group'>Senior</option>
+                <option value = 'Adult', id = 'age_group'>Adult</option>
+              </select><br>
+            </div>
+            
+            <div class="col-md-5">
+              Number of Education years : 
+              <input name = "educational_num" class="form-control", id = 'educational_num', required = True></input><br>
+            </div>
+            
+          <div class="col-md-5">
+            Capital Gain : 
+            <input name = "capital_gain" class="form-control", id = 'capital_gain', required = True></input><br>
+          </div>
+        
+          <div class="col-md-5">
+            Capital Loss : 
+            <input name = "capital_loss" class="form-control", id = 'capital_loss', required = True></input><br>
+          </div> 
+      
+          <div class="col-md-5">
+            Age : 
+            <input name = "age" class="form-control", id = 'age', required = True></input><br>
+          </div> 
+      
+          <div class="col-md-5">
+            Working Hours Per Week : 
+            <input name = "hours_per_week" class="form-control", id = 'hours_per_week', required = True></input><br>
+          </div> 
+        </div>
+    </div>
+    <div class="container1">
+    <div class="row">
+            <div class="col-md-5 ">
+              <input type="submit" , id="submit" , text="submit" class="btn btn-dark">
+            </div>
+        </div>
+    </div><br><br>
+    <h1 class="pred">{{ prediction_text }}</h1>
+            
+          
+           
+      </form>
+</body>
+</html>
