@@ -1,6 +1,6 @@
 # Adult Income Prediction
 
-o Machine Learning Model which helps in the prediction of the salary of a individual if its above or below 50K. 
+o Machine Learning Model which helps in the prediction of the salary of an individual if its above or below 50K. 
 
 
 ## Authors
