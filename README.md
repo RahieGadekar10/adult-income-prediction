@@ -16,7 +16,7 @@ Contributions are always welcome!
   
 ## Deploying Model 
 
-- Download the github repository using : 
+- Download the github repository : 
   ```bash
   HTTPS : https://github.com/RahieGadekar10/adult-income-prediction.git
   ```
@@ -26,11 +26,11 @@ Contributions are always welcome!
   ```bash 
   Github CLI : gh repo clone RahieGadekar10/adult-income-prediction
   ```
-- Install the dependencies using : 
+- Install the dependencies : 
     ```bash 
-    - Pip : !pip install -r requirements.txt
+    - Pip : pip install -r requirements.txt
     ```
     ```bash
-    - Conda : !conda install -r requirements.txt
+    - Conda : conda install -r requirements.txt
     ```
 - Execute index.html 
